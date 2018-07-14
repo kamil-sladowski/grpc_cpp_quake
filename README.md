@@ -11,7 +11,7 @@ TODO:  add gRPC source tree to your project (preferrably as a git submodule) and
 ```sh
 $ sudo apt-get install golang
 $ mkdir build && cd build
-$ cmake
+$ cmake ..
 $ make
  
 ```
