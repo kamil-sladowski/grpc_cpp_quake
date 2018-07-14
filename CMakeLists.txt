@@ -43,10 +43,10 @@ get_filename_component(hw_proto "canal_data.proto" ABSOLUTE)
 get_filename_component(hw_proto_path "${hw_proto}" PATH)
 
 # Generated sources
-set(hw_proto_srcs "${CMAKE_CURRENT_BINARY_DIR}/quake_event_generator.pb.cc")
-set(hw_proto_hdrs "${CMAKE_CURRENT_BINARY_DIR}/quake_event_generator.pb.h")
-set(hw_grpc_srcs "${CMAKE_CURRENT_BINARY_DIR}/quake_event_generator.grpc.pb.cc")
-set(hw_grpc_hdrs "${CMAKE_CURRENT_BINARY_DIR}/quake_event_generator.grpc.pb.h")
+set(hw_proto_srcs "${CMAKE_CURRENT_BINARY_DIR}/canal_data.pb.cc")
+set(hw_proto_hdrs "${CMAKE_CURRENT_BINARY_DIR}/canal_data.pb.h")
+set(hw_grpc_srcs "${CMAKE_CURRENT_BINARY_DIR}/canal_data.grpc.pb.cc")
+set(hw_grpc_hdrs "${CMAKE_CURRENT_BINARY_DIR}/canal_data.grpc.pb.h")
 add_custom_command(
       OUTPUT "${hw_proto_srcs}" "${hw_proto_hdrs}" "${hw_grpc_srcs}" "${hw_grpc_hdrs}"
       COMMAND ${_PROTOBUF_PROTOC}
@@ -60,10 +60,10 @@ add_custom_command(
 # Include generated *.pb.h files
 include_directories("${CMAKE_CURRENT_BINARY_DIR}")
 
-# Targets greeter_[async_](client|server)
+# Targets 
 foreach(_target
-  quake_event_generator)
-  add_executable(${_target} "${_target}.cc"
+  canal_data)
+  add_executable(${_target} "quake_event_generator.cc"
     ${hw_proto_srcs}
     ${hw_grpc_srcs})
   target_link_libraries(${_target}
