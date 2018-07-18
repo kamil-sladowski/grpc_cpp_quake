@@ -14,10 +14,10 @@
 using grpc::Channel;
 using grpc::ClientContext;
 using grpc::Status;
-using grpccommunication::QuakeEventMessage;
-using grpccommunication::InjuryDataMessage;
-using grpccommunication::ServerConfirmation;
-using grpccommunication::SendingQuakeEvent;
+using imageviewer::QuakeEventMessage;
+using imageviewer::InjuryDataMessage;
+using imageviewer::ServerConfirmation;
+using imageviewer::SendingQuakeEvent;
 
 class QuakeEventGenerator {
  public:
